@@ -1,0 +1,50 @@
+@(title: String)(content: Html)
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Redção</title>
+      <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+      
+      <link rel="stylesheet" media="screen" href="@routes.Assets.at("javascript/DT_bootstrap.js")">
+      
+      <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootplus.css")">
+      <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootplus-responsive.css")">
+      <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li class="active"><a href="#">Início</a></li>
+                <li><a href="#">Professores</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+		
+	@content
+   <div class="footer">
+        <p>&copy; Redacao Online 2013</p>
+   </div>
+      
+  </body>
+</html>

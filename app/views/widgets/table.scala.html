@@ -1,0 +1,31 @@
+@(redacoes: List[models.Redacao])
+@main("Redacoes") {
+	
+	
+	
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="gridBootstrap">
+      <thead>
+                 <tr>
+                   <th>Titulo</th>
+                   <th>Arquivo</th>
+                   <th>Data De Envio</th>
+                   <th>Nota</th>
+                   <th>Excluir</th>
+                 </tr>
+         </thead>
+         <tbody>
+
+
+		@for(order <- redacoes) {
+                <tr>
+                   <td>@order.getTitle()</td>
+                   <td>@order.getTitle()</td>
+                   <td>@order.getTitle()</td>
+                   <td>@order.getTitle()</td>
+                   <td><a href="#">Excluir</a></td>
+                </tr>
+		}
+		</tbody>
+ 	</table>
+	
+}
