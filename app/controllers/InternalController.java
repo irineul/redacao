@@ -21,6 +21,7 @@ public class InternalController extends Controller {
 	    r = new Redacao();
 	    r.setTitle("Teste3");
 	    redacoes.add(r);
+
 	    Content content = views.html.widgets.table.render(redacoes);
         return ok(content);
     }
