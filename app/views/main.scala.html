@@ -1,10 +1,5 @@
 @(title: String)(content: Html)
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -16,50 +11,106 @@
       <meta name="author" content="">
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-responsive.css")">
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-fileupload.min.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootplus.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootplus-responsive.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/datepicker.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/validation.css")">
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/DT_bootstrap.css")">
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jasny-bootstrap.min.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bs.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/fio.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/ie.css")">
 	
 	
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.9.min.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")"></script>
 	<script type="text/javascript" src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/bootstrap-fileupload.min.js")"></script>
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/bootstrap-datepicker.js")"></script>
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/util.js")"></script>
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/bootstrap-dropdown.js")"></script>
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.maskMoney.js")"></script>
-	<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.validate.js")"></script>
-    <script type="text/javascript" src="@routes.Assets.at("javascripts/jasny_bootstrap.min.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/application.js")"></script>
     
   </head>
-  <body>
-    <div class="container">
+    <style type="text/css">
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 70px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 80px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 21px;
+        line-height: 2.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        /*border-left: 1px solid rgba(255,255,255,.75);*/
+        /*border-right: 1px solid rgba(0,0,0,.1);*/
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+    </style>	
       <div class="masthead">
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li class="active"><a href="#">Início</a></li>
+                <li class="active"><a href="index">Início</a></li>
                 <li><a href="#">Professores</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Contato</a></li>
+                <li><a href="login">Login</a></li>                
               </ul>
             </div>
           </div>
-        </div>
-      </div>
+        </div><!-- /.navbar -->
+      </div>	
 		
 	@content
-   <div class="footer">
-        <p>&copy; Redacao Online 2013</p>
-   </div>
+	
+	<p class="ac">
+		<small>
+			Copyright 2013 &copy; <a href="#">Redação Online</a>&nbsp;|&nbsp;<a href="#">Precisa de ajuda?</a>
+		</small>
+	</p>
       
   </body>
 </html>
