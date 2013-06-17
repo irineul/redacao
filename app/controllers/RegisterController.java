@@ -6,12 +6,13 @@ import play.mvc.*;
 
 import views.html.*;
 
-public class LoginController extends Controller {
+public class RegisterController extends Controller {
   
 	static Form<User> userForm = Form.form(User.class);
-	public static Result login() {
+	public static Result register() {
 		  return ok(
-		    views.html.login.render(userForm)
+		    views.html.register.render(userForm)
 		  );
 	}
+  
 }

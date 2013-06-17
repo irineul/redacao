@@ -1,11 +1,18 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
 	private String firstName;
 	private String lastName;	
 	private String eMmail;
 	private String password;
+	
+	public static List<User> all() {
+	    return new ArrayList<User>();
+	  }
 	
 	public String getFirstName() {
 		return firstName;

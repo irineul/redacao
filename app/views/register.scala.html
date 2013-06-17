@@ -1,0 +1,46 @@
+@(userForm: Form[User])
+
+@import helper._
+
+@main("Login") {
+		<div id="login">
+			<div class="block center login small">
+				<div class="block_head">
+					<div class="bheadl"></div>
+					<div class="bheadr"></div>
+					<h2>Cadastro</h2>
+					<ul>
+						<li><a href="login" rel="tooltip" title="J‡ possui uma conta?">Login</a></li>
+					</ul>
+
+				</div>
+				<div class="block_content">
+					<form accept-charset="UTF-8" action="#" class="new_user" id="new_user" method="post">
+						<label for="username">Nome</label>
+						<input class="span5" id="username" name="username" size="30" type="text">
+						<label for="username">Sobrenome</label>
+						<input class="span5" id="username" name="username" size="30" type="text">						
+						<label for="email">Email</label>
+						<input class="span5" id="email" name="email" size="30" type="text">
+						<label for="password">Senha</label>
+						<input class="span5" id="password" name="password" size="30" type="password">
+						<label for="password2">Confirme sua senha</label>
+						<input class="span5" id="password2" name="password2" size="30" type="password">
+						<div class="form-actions">
+							<div class="row">
+								<div class="span2" style="width:120px">
+									<input class="btn btn-primary btn-large" name="commit" type="submit" value="Criar uma conta">
+								</div>
+								<div class="span2" style="padding-top:10px; width:200px">
+									<label class="checkbox" for="tos">
+									<input name="tos" type="hidden" value="0">
+									<input id="tos" name="tos" type="checkbox" value="1">Li e concordo com os <a href="#">Termos de Uso</a> do RedacaoOnline</label>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="bendl"></div>
+				<div class="bendr"></div>
+			</div>
+}
