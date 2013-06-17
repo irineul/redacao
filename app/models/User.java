@@ -1,19 +1,32 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class User {
+import javax.persistence.*;
 
-	private String firstName;
-	private String lastName;	
-	private String eMmail;
-	private String password;
-	
+import play.db.ebean.*;
+import play.data.validation.Constraints.*;
+
+
+@Entity
+public class User extends Model {
+
+	@Id
+	public Long id;
+
+	public String firstName;
+	public String lastName;	
+	public String eMail;
+	public String password;
+
+	public static Finder<Long,User> find = new Finder(
+			Long.class, User.class
+			);	
+
 	public static List<User> all() {
-	    return new ArrayList<User>();
-	  }
-	
+		return new ArrayList<User>();
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -27,10 +40,10 @@ public class User {
 		this.lastName = lastName;
 	}
 	public String geteMmail() {
-		return eMmail;
+		return eMail;
 	}
 	public void seteMmail(String eMmail) {
-		this.eMmail = eMmail;
+		this.eMail = eMmail;
 	}
 	public String getPassword() {
 		return password;
@@ -38,4 +51,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	/* CRUD operations */
+	public static void create(User user) {
+		user.save();
+	}
+
+	public static void delete(Long id) {
+		find.ref(id).delete();
+	}	
 }

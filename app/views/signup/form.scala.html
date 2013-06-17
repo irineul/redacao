@@ -15,7 +15,7 @@
 
 				</div>
 				<div class="block_content">
-					<form accept-charset="UTF-8" action="#" class="new_user" id="new_user" method="post">
+					@helper.form(action = routes.SignUp.submit(), args = 'class -> "new_user", 'id -> "new_user"){
 						<label for="username">Nome</label>
 						<input class="span5" id="username" name="username" size="30" type="text">
 						<label for="username">Sobrenome</label>
@@ -38,7 +38,7 @@
 								</div>
 							</div>
 						</div>
-					</form>
+					}
 				</div>
 				<div class="bendl"></div>
 				<div class="bendr"></div>

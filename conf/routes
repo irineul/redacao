@@ -6,10 +6,13 @@
 GET     /                           controllers.ApplicationController.index()
 GET     /index                      controllers.ApplicationController.index()
 GET     /interno                   	controllers.InternalController.index()
+
 # Login
-GET     /login                   	controllers.LoginController.login()
+GET     /signin                   	controllers.SignIn.blank()
+
 # Register
-GET     /register                   controllers.RegisterController.register()
+GET     /signup                   	controllers.SignUp.blank()
+POST    /signup/submit            	controllers.SignUp.submit()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
