@@ -13,10 +13,12 @@ public class User extends Model {
 
 	@Id
 	public Long id;
-
-	public String firstName;
-	public String lastName;	
+	
+	@Required
+	public String name;
+	@Required
 	public String eMail;
+	@Required
 	public String password;
 
 	public static Finder<Long,User> find = new Finder(
@@ -27,17 +29,11 @@ public class User extends Model {
 		return new ArrayList<User>();
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
-	public void setName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String geteMmail() {
 		return eMail;

@@ -7,10 +7,14 @@ GET     /                           controllers.ApplicationController.index()
 GET     /index                      controllers.ApplicationController.index()
 GET     /interno                   	controllers.InternalController.index()
 
-# Login
+# SignIn
 GET     /signin                   	controllers.SignIn.blank()
+POST    /signin/submit            	controllers.SignIn.submit()
+# SignIn-Recovery
+GET    	/signin/recovery            controllers.AccountRecovery.blank()
+GET    	/signin/recovery/submit     controllers.AccountRecovery.submit()
 
-# Register
+# SignUp
 GET     /signup                   	controllers.SignUp.blank()
 POST    /signup/submit            	controllers.SignUp.submit()
 
