@@ -16,15 +16,19 @@
 		</div>
 		<div class="block_content">
 			@helper.form(action = routes.SignUp.submit(), args = 'class ->
-			"new_user", 'id -> "new_user"){ <label for="firstName">Nome
-				Completo</label> <input class="span5" id="name" name="name" size="30"
-				type="text"> <label for="email">Email</label> <input
-				class="span5" id="email" name="email" size="30" type="text">
+			"new_user", 'id -> "new_user"){ 
+			
+			<label for="name">Nome Completo</label> 
+			<input class="span5" id="name" name="name" size="30" type="text"> 			
+			
+			<label for="eMail">Email</label> 
+			<input class="span5" id="eMail" name="eMail" size="30" type="text">
 
-			<label for="password">Senha</label> <input class="span5"
-				id="password" name="password" size="30" type="password"> <label
-				for="password2">Confirme sua senha</label> <input class="span5"
-				id="password2" name="password2" size="30" type="password">
+			<label for="password">Senha</label> 
+			<input class="span5" id="password" name="password" size="30" type="password">
+			
+			<label for="password2">Confirme sua senha</label> 
+			<input class="span5" id="password2" name="password2" size="30" type="password">
 
 			<div class="form-actions">
 				<div class="row">

@@ -24,9 +24,12 @@ public class SignUp extends Controller {
 	 */ 
 	public static Result submit() {
 		Form<User> filledForm = userForm.bindFromRequest();
+		
+		/* Validations */
+		
 		if(filledForm.hasErrors()) {
 			return badRequest(
-					views.html.signup.form.render(userForm)
+					views.html.signup.form.render(filledForm)
 					);
 		} else {
 			User.create(filledForm.get());
@@ -34,4 +37,3 @@ public class SignUp extends Controller {
 		}
 	}	
 }
-

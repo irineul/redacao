@@ -16,8 +16,11 @@ public class User extends Model {
 	
 	@Required
 	public String name;
+	
 	@Required
+	@MinLength(value = 4)
 	public String eMail;
+	
 	@Required
 	public String password;
 
