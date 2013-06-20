@@ -18,11 +18,13 @@ public class User extends Model {
 	public String name;
 	
 	@Required
-	@MinLength(value = 4)
-	public String eMail;
+	public String email;
 	
 	@Required
 	public String password;
+	
+	@Required
+	public String repeatPassword;	
 
 	public static Finder<Long,User> find = new Finder(
 			Long.class, User.class
@@ -38,17 +40,24 @@ public class User extends Model {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String geteMmail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
-	public void seteMmail(String eMmail) {
-		this.eMail = eMmail;
+	public void seteMmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getRepeatPassword() {
+		return repeatPassword;
+	}
+
+	public void setRepeatPassword(String repeatPassword) {
+		this.repeatPassword = repeatPassword;
 	}
 
 	/* CRUD operations */

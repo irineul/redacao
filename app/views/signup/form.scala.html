@@ -1,62 +1,56 @@
 @(userForm: Form[User]) 
-@import helper._
-@import helper.twitterBootstrap._ 
+@import views.html.helper.FieldConstructor
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }  
+
 
 @main("Login") {
-<div id="login">
-	<div class="block center login small">
-		<div class="block_head">
-			<div class="bheadl"></div>
-			<div class="bheadr"></div>
-			<h2>Cadastro</h2>
-			<ul>
-				<li><a href="/signin" rel="tooltip"
-					title="Ja possui uma conta?">Login</a></li>
-			</ul>
+<div class="container">
+        	<div class="row-fluid">
+            	<div class="span12">
+                    <div class="span6">
+                    	<div class="area">                    	
+                            @helper.form(routes.SignUp.submit(), 'class -> "form-horizontal"){  
+                                <div class="heading">
+                                    <h4 class="form-heading">Cadastro</h4>
+                                </div>
+                                
+						            @helper.inputText(
+						                userForm("name"), 
+						                '_label -> "Nome Completo",
+						                '_error -> userForm.globalError
+						            )
+						            
+						            @helper.inputText(
+						                userForm("email"), 
+						                '_label -> "Email",
+						                '_error -> userForm.globalError
+						            )
 
-		</div>
-		<div class="block_content">
-			@helper.form(action = routes.SignUp.submit(), args = 'class ->
-			"new_user", 'id -> "new_user"){ 
-			
-            @helper.inputText(
-                userForm("name"), 
-                args = 'class -> "span5",
-                '_label -> "Nome Completo", 
-                '_error -> userForm.globalError,
-                '_help -> "Informe seu nome completo."                
-            )
-            			
-			<label for="name">Nome Completo</label> 
-			<input class="span5" id="name" name="name" size="30" type="text"> 			
-			
-			<label for="eMail">Email</label> 
-			<input class="span5" id="eMail" name="eMail" size="30" type="text">
-
-			<label for="password">Senha</label> 
-			<input class="span5" id="password" name="password" size="30" type="password">
-			
-			<label for="password2">Confirme sua senha</label> 
-			<input class="span5" id="password2" name="password2" size="30" type="password">
-
-			<div class="form-actions">
-				<div class="row">
-					<div class="span2" style="width: 120px">
-						<input class="btn btn-primary btn-large" name="commit"
-							type="submit" value="Criar uma conta">
-					</div>
-					<div class="span2" style="padding-top: 10px; width: 200px">
-						<label class="checkbox" for="tos"> <input name="tos"
-							type="hidden" value="0"> <input id="tos" name="tos"
-							type="checkbox" value="1">Li e concordo com os <a
-							href="#">Termos de Uso</a> do RedacaoOnline
-						</label>
-					</div>
-				</div>
-			</div>
-			}
-		</div>
-		<div class="bendl"></div>
-		<div class="bendr"></div>
-	</div>
+						            @helper.inputPassword(
+						                userForm("password"), 
+						                '_label -> "Senha",
+						                '_error -> userForm.globalError
+						            )
+						            
+						            @helper.inputPassword(
+						                userForm("repeatPassword"), 
+						                '_label -> "Confirme sua senha",
+						                '_error -> userForm.globalError
+						            )
+    
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <label class="checkbox">
+                                            <input type="checkbox"> Eu aceito os <a href="#">Termos de Serviço</a>
+                                        </label>
+                                        <button type="submit" class="btn btn-success">Concluir</button>
+                                    </div>
+                                </div>						            						            
+                            }
+						</div>                            
+                    </div>
+                </div>
+            	
+            </div>
+        </div>                    
 }
